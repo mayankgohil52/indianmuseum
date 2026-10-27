@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galleries & Timings | National Museum, New Delhi</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <div class="top-bar">
+        <span>📍 Janpath Road, Central Secretariat, New Delhi - 110011</span>
+        <span>🕒 Open Tue–Sun: 10:00 AM – 6:00 PM (Closed Mondays)</span>
+    </div>
+
+    <header>
+        <div class="logo-title">
+            NATIONAL MUSEUM, NEW DELHI
+            <span>MINISTRY OF CULTURE, GOVT. OF INDIA (CULTURAL SHOWCASE)</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="exhibitions.html" class="active">Galleries & Timings</a></li>
+                <li><a href="visit.html">Book Visitor Pass</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">National Museum Artifact Collections</h2>
+        <p class="section-subtitle">Use the buttons below to filter galleries by floor and category (Powered by jQuery)</p>
+
+        <div class="filter-btns">
+            <button class="filter-btn active" data-filter="all">All Galleries</button>
+            <button class="filter-btn" data-filter="harappan">Harappan & Archaeology</button>
+            <button class="filter-btn" data-filter="paintings">Miniatures & Manuscripts</button>
+            <button class="filter-btn" data-filter="decorative">Jewelry, Coins & Textiles</button>
+        </div>
+
+        <div class="grid">
+            <div class="card artifact-item" data-category="harappan">
+                <img src="https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?auto=format&fit=crop&w=800&q=80" 
+                     onerror="this.src='https://placehold.co/600x400/8B261D/D4AF37?text=Pashupati+Seal+2500+BCE'" 
+                     alt="Harappan Carvings">
+                <div class="card-body">
+                    <span class="badge">Harappan Gallery</span>
+                    <h3>Pashupati Seal & Terracotta (2500 BCE)</h3>
+                    <p>Carved steatite seals and terracotta artifacts from Mohenjo-daro and Harappa.</p>
+                </div>
+            </div>
+
+            <div class="card artifact-item" data-category="harappan">
+                <img src="https://images.unsplash.com/photo-1609766857041-ed402ea8069a?auto=format&fit=crop&w=800&q=80" 
+                     onerror="this.src='https://placehold.co/600x400/16263A/D4AF37?text=Buddhist+Art+Gallery'" 
+                     alt="Buddha Sculpture">
+                <div class="card-body">
+                    <span class="badge">Buddhist Art Gallery</span>
+                    <h3>Gupta & Gandhara Sculptures</h3>
+                    <p>Serene red sandstone and schist sculptures of Lord Buddha alongside sacred Kapilavastu relics.</p>
+                </div>
+            </div>
+
+            <div class="card artifact-item" data-category="paintings">
+                <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&w=800&q=80" 
+                     onerror="this.src='https://placehold.co/600x400/8B261D/D4AF37?text=Baburnama+Manuscripts'" 
+                     alt="Mughal Manuscript">
+                <div class="card-body">
+                    <span class="badge">Manuscripts & Miniatures</span>
+                    <h3>Illustrated Baburnama Folios</h3>
+                    <p>Imperial Mughal court paintings and illuminated Persian and Sanskrit palm-leaf manuscripts.</p>
+                </div>
+            </div>
+
+            <div class="card artifact-item" data-category="decorative">
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80" 
+                     onerror="this.src='https://placehold.co/600x400/16263A/D4AF37?text=Alamkara+Gold+Gallery'" 
+                     alt="Royal Gold Jewelry">
+                <div class="card-body">
+                    <span class="badge">Coins & Alamkara Gallery</span>
+                    <h3>Imperial Gupta Gold Coins & Jewelry</h3>
+                    <p>Part of the museum's 1,18,000+ coin collection and the royal Alamkara Indian gold jewelry vault.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">Floor-Wise Gallery Directory & Ticket Tariff Table</h2>
+        <p class="section-subtitle">Official floor plan, guided tour timings, and entry ticket structure</p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Floor Level</th>
+                        <th>Major Galleries Included</th>
+                        <th>Free Guided Tour Timing</th>
+                        <th>Indian Citizen</th>
+                        <th>College Student (ID)</th>
+                        <th>Foreign National</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Ground Floor</strong></td>
+                        <td>Harappan Civilization, Maurya & Gupta Art, Buddhist Relics, Chola Bronzes</td>
+                        <td>10:30 AM & 02:30 PM</td>
+                        <td>₹20 (All Floors)</td>
+                        <td>Free / ₹50 (Audio)</td>
+                        <td>₹500 (With Audio)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>First Floor</strong></td>
+                        <td>Mughal, Rajasthani & Pahari Miniatures, Central Asian Antiquities, Manuscripts</td>
+                        <td>11:30 AM & 03:30 PM</td>
+                        <td>Included</td>
+                        <td>Included</td>
+                        <td>Included</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Second Floor</strong></td>
+                        <td>Coins & Numismatics, Arms & Armour, Decorative Arts, Textiles, Tribal Lifestyle</td>
+                        <td>12:30 PM & 04:15 PM</td>
+                        <td>Included</td>
+                        <td>Included</td>
+                        <td>Included</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Special Pass</strong></td>
+                        <td><strong>Full Museum Entry + Digital Audio Guide + Curatorial Walk</strong></td>
+                        <td>10:00 AM – 05:00 PM</td>
+                        <td><strong>₹150</strong></td>
+                        <td><strong>₹50</strong></td>
+                        <td><strong>₹500</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>National Museum, New Delhi</strong> | Janpath, New Delhi - 110011</p>
+        <p style="margin-top: 6px;">Developed for Web Technologies Practical Project Assignment (HTML, CSS, JS & jQuery)</p>
+    </footer>
+
+    <script>
+        $(document).ready(function() {
+            $(".filter-btn").click(function() {
+                var category = $(this).attr("data-filter");
+                $(".filter-btn").removeClass("active");
+                $(this).addClass("active");
+
+                if (category === "all") {
+                    $(".artifact-item").fadeIn(350);
+                } else {
+                    $(".artifact-item").not('[data-category="' + category + '"]').fadeOut(200);
+                    $('.artifact-item[data-category="' + category + '"]').fadeIn(350);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

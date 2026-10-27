@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Visitor Pass | National Museum, New Delhi</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <div class="top-bar">
+        <span>📍 Janpath Road, Central Secretariat, New Delhi - 110011</span>
+        <span>🕒 Open Tue–Sun: 10:00 AM – 6:00 PM (Closed Mondays)</span>
+    </div>
+
+    <header>
+        <div class="logo-title">
+            NATIONAL MUSEUM, NEW DELHI
+            <span>MINISTRY OF CULTURE, GOVT. OF INDIA (CULTURAL SHOWCASE)</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="exhibitions.html">Galleries & Timings</a></li>
+                <li><a href="visit.html" class="active">Book Visitor Pass</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Online E-Ticket & Audio Tour Reservation</h2>
+        <p class="section-subtitle">Book your entry pass for the National Museum, Janpath, New Delhi</p>
+
+        <div class="form-container">
+            <form id="bookingForm" onsubmit="return validateBooking(event)">
+                
+                <div class="form-group">
+                    <label for="visitorName">Full Name of Lead Visitor *</label>
+                    <input type="text" id="visitorName" placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="visitorEmail">Email Address (For E-Ticket PDF) *</label>
+                    <input type="email" id="visitorEmail" placeholder="name@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="visitorPhone">10-Digit Mobile Number *</label>
+                    <input type="text" id="visitorPhone" placeholder="9876543210" maxlength="10">
+                </div>
+
+                <div class="form-group">
+                    <label for="visitDate">Preferred Date of Visit (Closed on Mondays) *</label>
+                    <input type="date" id="visitDate">
+                </div>
+
+                <div class="form-group">
+                    <label for="passType">Select Visitor Category *</label>
+                    <select id="passType" onchange="updateTotalFare()">
+                        <option value="20">Indian Adult - Standard Entry (₹20)</option>
+                        <option value="150">Indian Adult + Audio Guide Combo (₹150)</option>
+                        <option value="50">College Student with ID + Audio Guide (₹50)</option>
+                        <option value="500">Foreign Tourist Pass + Audio Guide (₹500)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="numTickets">Number of Visitors (1 to 20) *</label>
+                    <input type="number" id="numTickets" value="1" min="1" max="20" oninput="updateTotalFare()">
+                </div>
+
+                <div class="form-group">
+                    <label for="galleryPref">Preferred Guided Tour Wing</label>
+                    <select id="galleryPref">
+                        <option value="Harappan & Ancient Wing">Ground Floor: Harappan & Chola Bronze Wing</option>
+                        <option value="Miniature & Manuscripts Wing">First Floor: Mughal Miniatures & Manuscripts</option>
+                        <option value="Alamkara & Decorative Arts">Second Floor: Alamkara Jewelry, Coins & Textiles</option>
+                    </select>
+                </div>
+
+                <div class="price-box">
+                    Total Ticket Amount Payable: ₹<span id="totalFare">20</span>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; font-size: 1.05rem;">Confirm E-Ticket Reservation</button>
+            </form>
+
+            <div id="confirmationBox" style="display:none; margin-top:22px; padding:18px; background:#e8f5e9; border-left:5px solid #2e7d32; color:#1b5e20; border-radius:4px; font-family:Arial, sans-serif;">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>National Museum, New Delhi</strong> | Janpath, New Delhi - 110011</p>
+        <p style="margin-top: 6px;">Developed for Web Technologies Practical Project Assignment (HTML, CSS, JS & jQuery)</p>
+    </footer>
+
+    <script>
+        function updateTotalFare() {
+            var rate = parseInt(document.getElementById("passType").value) || 0;
+            var qty = parseInt(document.getElementById("numTickets").value) || 0;
+            document.getElementById("totalFare").innerText = rate * qty;
+        }
+
+        function validateBooking(event) {
+            event.preventDefault();
+
+            var name = document.getElementById("visitorName").value.trim();
+            var email = document.getElementById("visitorEmail").value.trim();
+            var phone = document.getElementById("visitorPhone").value.trim();
+            var dateVal = document.getElementById("visitDate").value;
+            var qty = document.getElementById("numTickets").value;
+            var wing = document.getElementById("galleryPref").value;
+            var total = document.getElementById("totalFare").innerText;
+
+            if (name === "" || email === "" || phone === "" || dateVal === "") {
+                alert("Please fill in all required (*) fields before booking.");
+                return false;
+            }
+
+            if (!/^[0-9]{10}$/.test(phone)) {
+                alert("Please enter a valid 10-digit mobile number.");
+                return false;
+            }
+
+            var chosenDate = new Date(dateVal);
+            if (chosenDate.getDay() === 1) {
+                alert("Note: The National Museum, New Delhi is closed on Mondays. Please select Tuesday to Sunday.");
+                return false;
+            }
+
+            $("#confirmationBox").html(
+                "<strong>🏛️ E-Ticket Confirmed — National Museum, New Delhi</strong><br><br>" +
+                "<b>Visitor Name:</b> " + name + "<br>" +
+                "<b>Date of Visit:</b> " + dateVal + " | <b>Visitors:</b> " + qty + "<br>" +
+                "<b>Selected Tour:</b> " + wing + "<br>" +
+                "<b>Total Payable at Gate:</b> ₹" + total
+            ).slideDown(400);
+
+            return true;
+        }
+    </script>
+</body>
+</html>

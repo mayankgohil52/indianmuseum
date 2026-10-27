@@ -1,0 +1,376 @@
+/* ==========================================================
+   NATIONAL MUSEUM, NEW DELHI - OFFICIAL HERITAGE THEME CSS
+   Colors inspired by Lutyens' Red Sandstone & Chola Bronze
+   ========================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+:root {
+    --sandstone-red: #8B261D;   /* Delhi Red Sandstone */
+    --imperial-navy: #16263A;   /* Ashoka Navy Blue */
+    --bronze-gold: #D4AF37;     /* Antique Bronze & Gold */
+    --buff-cream: #FAF6F0;      /* Warm Dholpur Stone Cream */
+    --text-dark: #222222;
+}
+
+body {
+    background-color: var(--buff-cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.top-bar {
+    background-color: var(--imperial-navy);
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 0.82rem;
+    padding: 6px 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+header {
+    background-color: var(--sandstone-red);
+    color: #fff;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 4px solid var(--bronze-gold);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.logo-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--bronze-gold);
+    letter-spacing: 0.5px;
+}
+
+.logo-title span {
+    display: block;
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1.5px;
+    margin-top: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 18px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+    padding: 9px 16px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: var(--bronze-gold);
+    color: var(--imperial-navy);
+    font-weight: bold;
+}
+
+/* === UNBLOCKABLE HERO BANNER === */
+.hero {
+    background: linear-gradient(rgba(22, 38, 58, 0.78), rgba(139, 38, 29, 0.82)),
+                url('https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+    color: #ffffff;
+    text-align: center;
+    padding: 110px 20px;
+    border-bottom: 4px solid var(--bronze-gold);
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    color: var(--bronze-gold);
+    margin-bottom: 12px;
+    text-shadow: 1px 2px 4px rgba(0,0,0,0.6);
+}
+
+.hero p {
+    font-size: 1.15rem;
+    max-width: 750px;
+    margin: 0 auto 25px;
+    font-family: Arial, sans-serif;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--bronze-gold);
+    color: var(--imperial-navy);
+    padding: 12px 26px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #e6c247;
+    transform: translateY(-2px);
+}
+
+.container {
+    max-width: 1150px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.1rem;
+    color: var(--sandstone-red);
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #555;
+    margin-bottom: 35px;
+    font-family: Arial, sans-serif;
+}
+
+.about-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 6px solid var(--sandstone-red);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 45px;
+    align-items: center;
+}
+
+.about-box img {
+    flex: 1 1 350px;
+    max-width: 450px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 2px solid var(--bronze-gold);
+}
+
+.about-text {
+    flex: 1 1 400px;
+}
+
+.about-text h3 {
+    color: var(--imperial-navy);
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+}
+
+.about-text p {
+    font-family: Arial, sans-serif;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.09);
+    border: 1px solid #e2d9c8;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--bronze-gold);
+    background-color: #2c1810;
+}
+
+.card-body {
+    padding: 18px;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--imperial-navy);
+    color: var(--bronze-gold);
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.card-body h3 {
+    color: var(--sandstone-red);
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.card-body p {
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.filter-btns {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    background: #e6dec8;
+    border: 1px solid var(--sandstone-red);
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: var(--sandstone-red);
+    transition: 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--sandstone-red);
+    color: #ffffff;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    font-family: Arial, sans-serif;
+}
+
+th, td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e0d6c3;
+}
+
+th {
+    background-color: var(--imperial-navy);
+    color: var(--bronze-gold);
+    text-transform: uppercase;
+    font-size: 0.88rem;
+}
+
+tr:hover {
+    background-color: #f9f3e8;
+}
+
+.form-container {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    max-width: 700px;
+    margin: 0 auto;
+    border-top: 6px solid var(--sandstone-red);
+}
+
+.form-group {
+    margin-bottom: 18px;
+    font-family: Arial, sans-serif;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: var(--imperial-navy);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #c5b9a5;
+    border-radius: 4px;
+    font-size: 0.98rem;
+}
+
+.price-box {
+    background: #fdf6e4;
+    padding: 15px;
+    border-left: 5px solid var(--sandstone-red);
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: var(--imperial-navy);
+}
+
+.faq-item {
+    background: #ffffff;
+    border: 1px solid #dfd5c3;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.faq-question {
+    padding: 15px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    background: #f3ece0;
+    color: var(--imperial-navy);
+    display: flex;
+    justify-content: space-between;
+}
+
+.faq-answer {
+    padding: 15px 20px;
+    display: none;
+    font-family: Arial, sans-serif;
+    color: #333;
+    border-top: 1px solid #dfd5c3;
+}
+
+footer {
+    background-color: var(--imperial-navy);
+    color: #e0e0e0;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+    border-top: 4px solid var(--bronze-gold);
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+}
